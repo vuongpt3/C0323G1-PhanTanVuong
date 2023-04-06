@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 style="text-align: center; font-size: 50px" id="demo"> This is Demo Test</h1>
+    <button type="button" id="antui" onclick="alert('Hello My Friend')">Click vào đây</button>
+    <h2 id ="intro"></h2>
+<select id="mySelect" onchange="do_something()">
+    <option value="Audi">Audi</option>
+    <option value="Ferrari">Ferrari</option>
+    <option value="Lamborghini">Lamborghini</option>
+    <option value="Mercedes">Mercedes</option>
+</select>
+    <button value="oke" id="click1">Click Me</button>
+    <h2>What Can JavaScript Do?</h2>
+    <p>JavaScript can change HTML attributes.</p>
+    <p>In this case JavaScript changes the src (source) attribute of an image.</p>
+    <button onclick="document.getElementById('myImage').src='https://media.geeksforgeeks.org/wp-content/uploads/ONbulb.jpg'">Turn on the light</button>
+    <img id="myImage" src="https://media.geeksforgeeks.org/wp-content/uploads/OFFbulb.jpg" style="width:100px">
+    <button onclick="document.getElementById('myImage').src='https://media.geeksforgeeks.org/wp-content/uploads/OFFbulb.jpg'">Turn off the light</button>
+</body>
+</html>
+<script>
+  let selectElement = document.getElementById("mySelect");
+  selectElement.addEventListener("change", changfunction);
+  function changfunction(){
+      let show = document.getElementById("mySelect").value;
+      alert(show)
+  }
+  let demo =document.getElementById("demo");
+  demo.addEventListener("mouseover", onmouseover);
+  demo.addEventListener("mouseout", onmouseout);
+  function onmouseover() {
+      document.getElementById("demo").style.color = "blue";
+  }
+      function onmouseout(){
+          document.getElementById("demo").style.color="black";
+      }
+  let click = document.getElementById("click1");
+  click.addEventListener("click", lickme);
+  function lickme(){
+      alert("Xin chao cac Pro");
+  }
+  let anvao = document.getElementById("antui");
+  anvao.addEventListener("mouseover",mouseover);
+  anvao.addEventListener("mouseout", mouseout);
+  function mouseover(){
+      document.getElementById("antui").style.color="red";
+  }
+  function mouseout(){
+      document.getElementById("antui").style.color="black";
+  }
+</script>
