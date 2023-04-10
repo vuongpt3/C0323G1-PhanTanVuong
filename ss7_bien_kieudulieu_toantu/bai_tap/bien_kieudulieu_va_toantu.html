@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính điểm trung bình và tổng điểm của học sinh</title>
+</head>
+<body>
+<script>
+    let diemVatLy = prompt("Nhập điểm Vật lý của bạn:");
+    let diemHoaHoc = prompt("Nhập điểm Hóa học của bạn:");
+    let diemSinhHoc = prompt("Nhập điểm Sinh học của bạn:");
+    diemVatLy = parseFloat(diemVatLy);
+    diemHoaHoc = parseFloat(diemHoaHoc);
+    diemSinhHoc = parseFloat(diemSinhHoc);
+    let tongDiem = diemVatLy + diemHoaHoc + diemSinhHoc;
+    let diemTrungBinh = tongDiem / 3;
+    document.write('Điểm trung bình của bạn là: ' + diemTrungBinh.toFixed(2) + "<br>" + "<hr>");
+    document.write('Tổng điểm của bạn là: ' + tongDiem.toFixed(2));
+</script>
+</body>
+</html>
