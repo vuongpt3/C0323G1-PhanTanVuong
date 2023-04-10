@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp hạng học lực dựa trên các điểm bài kiểm tra</title>
+</head>
+<body>
+    <input type="text" placeholder="Nhập số điểm bài kiểm tra thức nhất: " id="mon1"><br><br>
+    <input type="text" placeholder="Nhập số điểm bài kiểm tra thức hai: "id="mon2"><br><br>
+    <input type="text" placeholder="Nhập số điểm bài kiểm tra thức ba: "id="mon3"><br><br>
+    <input type="button" value="Kiểm tra học lực" onclick="kiem_tra()">
+    <p id="hienthi"></p>
+<script>
+    function kiem_tra(){
+        let mon1 = document.getElementById("mon1").value;
+        let mon2 = document.getElementById("mon2").value;
+        let mon3 = document.getElementById("mon3".value);
+        let diemTB = (mon1 + mon2 + mon3) / 3;
+        let hienthi;
+            if (diemTB >= 8){
+                hienthi = "Bạn là học sinh giỏi"
+            }else if (diemTB >=6){
+                hienthi = "Bạn là học sinh khá"
+            }else if (diemTB >=5){
+                hienthi = "Bạn là học sinh trung bình"
+            }
+        else{
+            hienthi = "Bạn học sinh yếu"
+        }
+        document.getElementById("hienthi").innerHTML = hienthi;
+    }
+    // let a = prompt('Nhập số điểm bài kiểm tra môn thứ nhất','');
+    // let  b = prompt('Nhập số điểm bài kiểm tra thứ hai','');
+    // let  c = prompt('Nhập số điểm bài kiểm tra thứ 3','');
+    // let diemTB = (parseFloat(a) + parseFloat(b) + parseFloat(c)) /3;
+    // if (diemTB >= 9){
+    //     alert('Học sinh giỏi');
+    // }else if (9 > diemTB >= 7){
+    //     alert('Học sinh khá');
+    // }else if (7 > diemTB >=5){
+    //     alert('Học sinh trung bình')
+    // }else {
+    //     alert('Học sinh yếu');
+    // }
+</script>
+</body>
+</html>
