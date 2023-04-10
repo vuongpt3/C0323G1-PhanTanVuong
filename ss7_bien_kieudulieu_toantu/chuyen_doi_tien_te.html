@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển Đổi Tiền Tệ</title>
+</head>
+<body>
+<h1 style="text-align: center;font-size: 50px">Chuyển tiền tệ</h1>
+<table style="width: 50%; margin: 0 auto">
+    <tr>
+        <td><input type="text" name="number" id="amount" placeholder="Nhập số tiền cần chuyển"></td>
+        <td></td>
+        <td><select id="from" name="from" style="padding: 1px ">
+            <option value="VND">VND</option>;
+            <option value="USD">USD</option>;
+        </select>
+        </td>
+        <td></td>
+        <td><select id="to" name="to" style="padding: 1px">
+            <option value="USD">USD</option>;
+            <option value="VND">VND</option>;
+        </select>
+        </td>
+        <td><button onclick="convert()">Convert</button></td>
+    </tr>
+</table>
+
+<p id="hienthi" style="text-align: center">Sau khi chuyển hiện tại đây </p>
+<script>
+    function convert(){
+        let x = document.getElementById("amount").value;
+        let y = document.getElementById("from").value;
+        let z = document.getElementById("to").value;
+        let usd = x * 23400;
+        let vnd = x / 23400;
+        if(y=="USD" && z=="VND"){
+            document.getElementById("hienthi").innerText="Kết quả sau khi chuyển: " + x + " USD = "+ usd + " VND ";
+        }
+        else if (y == "VND" && z == "USD") {
+            document.getElementById('hienthi').innerText ="Kết quả sau khi chuyển: " + x + " VND = " + vnd + " USD "
+        }
+        else {
+            alert('Lỗi 2 loại tiền tệ giống nhau!!!');
+        }
+    }
+</script>
+</body>
+</html>
