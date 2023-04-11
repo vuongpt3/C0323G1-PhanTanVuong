@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.</title>
+</head>
+<body>
+<!--<label for="tuoi">Nhập số tuổi để kiểm tra</label><br>-->
+<!--<input type="text" id="tuoi" placeholder="Nhập số tuổi">-->
+<!--<input type="button" value="Kiểm tra" onclick="kiem_tra()">-->
+<!--<p id="hienthi"></p>-->
+<!--<script>-->
+<!--    let tuoi = document.getElementById("tuoi").value;-->
+<!--    let hienthi;-->
+<!--    function kiem_tra(){-->
+<!--        if (Number.isInteger(tuoi < 120 && tuoi > 0)){-->
+<!--           hienthi = " Đây là số tuổi của con người"-->
+<!--        }-->
+<!--        else {-->
+<!--            hienthi = "Không phải tuổi của người"-->
+<!--        }-->
+<!--        alert("Kết quả là: " + hienthi);-->
+<!--    }-->
+
+<!--</script>-->
+<script>
+    let age = prompt("Nhập số tuổi",'');
+        if (age > 0 && age <= 120) {
+            document.write( age +" Là số tuổi của con người")
+        } else {
+            document.write(age +" Không phải là tuổi của con người")
+        }
+</script>
+</body>
+</html>

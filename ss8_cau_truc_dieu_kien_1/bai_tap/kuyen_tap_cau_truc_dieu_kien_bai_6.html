@@ -8,7 +8,7 @@
 <script>
     let doanhSo = prompt("Nhập doanh số bán hàng của bạn (VNĐ):");
     doanhSo = parseFloat(doanhSo);
-    let tienTip = 0;
+    let tienTip;
     if (doanhSo <= 1000000) {
         tienTip = doanhSo * 0.05;
     } else if (doanhSo <= 2000000) {

@@ -5,30 +5,30 @@
     <title>Xếp hạng học lực dựa trên các điểm bài kiểm tra</title>
 </head>
 <body>
-    <input type="text" placeholder="Nhập số điểm bài kiểm tra thức nhất: " id="mon1"><br><br>
-    <input type="text" placeholder="Nhập số điểm bài kiểm tra thức hai: "id="mon2"><br><br>
-    <input type="text" placeholder="Nhập số điểm bài kiểm tra thức ba: "id="mon3"><br><br>
-    <input type="button" value="Kiểm tra học lực" onclick="kiem_tra()">
-    <p id="hienthi"></p>
+<input type="text" placeholder="Nhập số điểm bài kiểm tra thức nhất: " id="mon1"><br><br>
+<input type="text" placeholder="Nhập số điểm bài kiểm tra thức hai: " id="mon2"><br><br>
+<input type="text" placeholder="Nhập số điểm bài kiểm tra thức ba: " id="mon3"><br><br>
+<input type="button" value="Kiểm tra học lực" onclick="kiem_tra()">
+<p id="hienThi"></p>
 <script>
-    function kiem_tra(){
+    function kiem_tra() {
         let mon1 = document.getElementById("mon1").value;
         let mon2 = document.getElementById("mon2").value;
-        let mon3 = document.getElementById("mon3".value);
-        let diemTB = (mon1 + mon2 + mon3) / 3;
-        let hienthi;
-            if (diemTB >= 8){
-                hienthi = "Bạn là học sinh giỏi"
-            }else if (diemTB >=6){
-                hienthi = "Bạn là học sinh khá"
-            }else if (diemTB >=5){
-                hienthi = "Bạn là học sinh trung bình"
-            }
-        else{
-            hienthi = "Bạn học sinh yếu"
+        let mon3 = document.getElementById("mon3").value;
+        let diemTB = (parseFloat(mon1) + parseFloat(mon2) + parseFloat(mon3)) / 3;
+        let hienThi;
+        if (diemTB >= 8) {
+            hienThi = "Bạn là học sinh giỏi"
+        } else if (diemTB >= 6) {
+            hienThi = "Bạn là học sinh khá"
+        } else if (diemTB >= 5) {
+            hienThi = "Bạn là học sinh trung bình"
+        } else {
+            hienThi = "Bạn học sinh yếu"
         }
-        document.getElementById("hienthi").innerHTML = hienthi;
+        document.getElementById("hienThi").innerHTML = hienThi;
     }
+
     // let a = prompt('Nhập số điểm bài kiểm tra môn thứ nhất','');
     // let  b = prompt('Nhập số điểm bài kiểm tra thứ hai','');
     // let  c = prompt('Nhập số điểm bài kiểm tra thứ 3','');

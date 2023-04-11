@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tiền lãi ngân hàng</title>
+</head>
+<body>
+<script>
+    let soTien = parseFloat(prompt("Nhập số tiền",''));
+    let soThang = parseFloat(prompt("Nhập số tháng gửi tiền",''));
+    let laiSuat = parseFloat(prompt("Nhập số lãi suất hàng tháng (%)",''));
+    let tienLai ;
+    tienLai = soTien * laiSuat / soThang;
+    document.write("Số tiền lãi mỗi tháng của bạn là: " + tienLai.toFixed(0) + " VND");
+</script>
+</body>
+</html>
