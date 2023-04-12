@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị 20 số nguyên tố</title>
+</head>
+<body>
+<script>
+    let num = 2;
+    let count = 0;
+    let number = +prompt("Nhập số lượng số nguyên tố muốn hiển thị ra")
+    function kiemTra(number) {
+        for(let i = 2; i < number; i++)
+            if(number % i === 0)
+                return false;
+        return number !== 1;
+    }
+    while(count < 20) {
+        if(kiemTra(num)) {
+            document.write(num + " :là số nguyên tố" + "<br>");
+            count++;
+        }
+        num++;
+    }
+</script>
+</body>
+</html>

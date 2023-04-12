@@ -6,27 +6,28 @@
 </head>
 <body>
     <h1>Tính chỉ số cân nặng</h1>
-    <label for="can_nang">Nhập cân nặng : (kg)</label>
-    <input type="text" placeholder="Nhập cân nặng" id="can_nang" ><br><br>
-    <label for="chieu_cao">Nhập chiều cao : (cm)</label>
-    <input type="text" placeholder="Nhập chiều cao" id="chieu_cao">
-    <button onclick="kiem_tra()">Kiểm tra</button>
-    <p id="hienthi"></p>
+    <label for="canNang">Nhập cân nặng : (kg)</label>
+    <input type="text" placeholder="Nhập cân nặng" id="canNang" ><br><br>
+    <label for="chieuCao">Nhập chiều cao : (cm)</label>
+    <input type="text" placeholder="Nhập chiều cao" id="chieuCao">
+    <button onclick="kiemTra()">Kiểm tra</button>
+    <p id="hienThi"></p>
 <script>
-    function kiem_tra(){
-        let can_nang = document.getElementById("can_nang").value;
-        let chieu_cao = document.getElementById("chieu_cao").value;
-        let bmi = can_nang / (chieu_cao ^ 2);
+    function kiemTra(){
+        let canNang = document.getElementById("canNang").value;
+        let chieuCao = document.getElementById("chieuCao").value;
+        let hienThi;
+        let bmi = canNang / (chieuCao ^ 2);
         if (bmi < 18.5){
-            hienthi = ('Bạn đang thiếu cân');
+            hienThi = ('Bạn đang thiếu cân');
         }else if ( bmi < 25.0) {
-            hienthi =('Bạn đủ cân');
+            hienThi =('Bạn đủ cân');
         }else if ( bmi < 30.0){
-            hienthi =('Bạn dư cân');
+            hienThi =('Bạn dư cân');
         }else {
-            hienthi =('Bạn béo phì');
+            hienThi =('Bạn béo phì');
         }
-        document.getElementById("hienthi").innerHTML = "BMI của bạn là " + bmi + "." + hienthi ;
+        document.getElementById("hienThi").innerHTML = "BMI của bạn là " + bmi + "." + hienThi ;
     }
 </script>
 </body>
