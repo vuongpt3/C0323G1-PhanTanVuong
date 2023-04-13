@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input style="height: 200px; width: 400px; font-size: 50px;" type="button" id="play" onclick="kiemTra()" value="Click vào để chơi">
+<script>
+    let numberRandom;
+    let number;
+   function kiemTra(){
+       let nhoNhat = parseInt(prompt("Nhập số giới hạn nhỏ nhất"));
+       let lonNhat = parseInt(prompt("Nhập số giới hạn lớn nhất"));
+       if (isNaN(nhoNhat) || isNaN(lonNhat) || nhoNhat >= lonNhat){
+           alert("Vui lòng nhập đúng số");
+           kiemTra();
+       }else {
+           numberRandom = Math.floor(Math.random() * (lonNhat - nhoNhat + 1)) + nhoNhat;
+           checkSo();
+       }
+   }
+    function checkSo(){
+        number = parseInt(prompt("Nhập số bạn đoán"));
+        if (isNaN(number)){
+            alert("Số không hợp lệ,vui lòng nhập lại");
+            checkSo();
+        }else if (number === numberRandom){
+            alert("Chúc mừng bạn đã đoán đúng")
+            checkSo();
+        }else if (number > numberRandom){
+            alert("Số bạn nhập nhỏ hơn")
+            checkSo();
+        }else {
+            alert("Số bạn nhập lớn hơn");
+            checkSo();
+        }
+    }
+</script>
+</body>
+</html>

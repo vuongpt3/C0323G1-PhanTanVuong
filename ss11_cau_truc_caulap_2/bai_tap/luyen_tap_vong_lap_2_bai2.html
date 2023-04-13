@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giai thừa</title>
+</head>
+<body>
+<script>
+    // let number = +prompt("Nhập giá trị muốn tính giai thừa :");
+    // function tinhGiaithua(number){
+    //     if (number === 0){
+    //         return 1;
+    //     }else {
+    //         return number * tinhGiaithua(number - 1);
+    //     }
+    // }document.write("Giai thừa của " + number + " là " + tinhGiaithua(number));
+    let number = +prompt("Nhập giá trị muốn tính giai thừa");
+    let giaiThua = 1;
+    function tinhGiaiThua(number) {
+        for (let i = 1; i <= number; i++) {
+            giaiThua *= i;
+        }
+        return giaiThua;
+    }
+    alert("Giai thừa của " + number + " là " + tinhGiaiThua(number));
+</script>
+</body>
+</html>
