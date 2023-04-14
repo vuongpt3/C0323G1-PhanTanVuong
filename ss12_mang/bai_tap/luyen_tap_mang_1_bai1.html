@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị số nguyên lớn hơn 10</title>
+</head>
+<body>
+<script>
+    let arr = [10,15,20,5,3,5,7,8,61,4];
+    let count = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= 10) {
+            count++;
+        }
+    }
+    document.write(`Số lượng số nguyên trong mảng lớn hơn hoặc bằng 10 là: ${count}`);
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị thông tin trong mảng</title>
+</head>
+<body>
+<script> //in ra chuỗi
+    let myColor = ["Red", "Green", "White", "Black"];
+    let result = myColor.join(',');
+    document.write(result);
+
+    // Nhaaph chuỗi số
+    let number = window.prompt("Nhập chuỗi số");
+    let string = number.toString()
+    let show = [string[0]];
+    for (let x = 1; x < string.length; x++) {
+        if ((string[x - 1] % 2 === 0) && (string[x] % 2 === 0)) {
+            show.push('-', string[x]);
+        } else {
+            show.push(string[x]);
+        }
+    }
+    document.write(show.join(''));
+
+    //chữ In thành thường - Thường thành in Hoa
+    let str = prompt("Nhập chữ vào");
+    let inThuong = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let inHoa = 'abcdefghijklmnopqrstuvwxyz';
+    let result = [];
+
+    for(let x=0; x<str.length; x++)
+    {
+        if(inThuong.indexOf(str[x]) !== -1)
+        {
+            result.push(str[x].toLowerCase());
+        }
+        else if(inHoa.indexOf(str[x]) !== -1)
+        {
+            result.push(str[x].toUpperCase());
+        }
+        else
+        {
+            result.push(str[x]);
+        }
+    }
+    document.write(result.join(''));
+
+</script>
+</body>
+</html>

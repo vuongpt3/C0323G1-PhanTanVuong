@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập phần tử trong mảng và đảo ngược các phần tử đó</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        let r = Math.floor(Math.random() * 100);
+        arr[i] = r;
+    }
+    document.write("Số nguyên sau khi tạo là : " + arr + "<br>");
+    arr.reverse();
+   document.write("Mảng sau khi đảo ngược: " + arr);
+</script>
+</body>
+</html>

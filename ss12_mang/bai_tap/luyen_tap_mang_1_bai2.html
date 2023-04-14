@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị phần tử và vị trí của số lớn nhất</title>
+</head>
+<body>
+<script>
+    let arr =  [];
+    for (let j = 0; j < 10; j++) {
+        let r = Math.floor(Math.random()* 100)
+        arr[j] = r;
+    }
+    document.write("Mảng số nguyên gồm 10 phần tử khác nhau là : " + arr + "<br>");
+    let lonNhat = arr[0];
+    let viTri = 0;
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > lonNhat) {
+            lonNhat = arr[i];
+            viTri = i;
+        }
+    }
+   document.write(" Số lớn nhất trong dãy số là " + lonNhat + " tại vị trí " + viTri);
+</script>
+</body>
+</html>

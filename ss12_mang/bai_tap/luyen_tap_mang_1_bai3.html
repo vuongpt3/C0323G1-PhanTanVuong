@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Khởi tạo số nguyên in ra số lớn nhất</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        let r = Math.floor(Math.random() * 100);
+        arr[i] = r ;
+    }
+    document.write("Mảng 10 số sau khi in là : " + arr + "<br>");
+    let lonNhat = arr[0];
+    for (let j = 0; j < arr.length; j++) {
+        if ( arr[j] > lonNhat){
+            lonNhat = arr[j];
+        }
+    }
+    document.write("Giá trị lớn nhất trong mảng là: " + lonNhat +"<br>");
+    let tong = arr.reduce((giaTrithuNhat, giaTrithuHai) => giaTrithuNhat + giaTrithuHai);
+    document.write("Tổng là :" + tong + " chia cho độ dài của mảng "  + "<br>")
+    let trungBinh = tong / arr.length;
+    document.write("Trung bình của mảng là: " + trungBinh);
+</script>
+</body>
+</html>
