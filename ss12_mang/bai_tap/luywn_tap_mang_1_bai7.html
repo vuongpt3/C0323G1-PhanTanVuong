@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra V trong mảng - Xóa V ra khỏi mảng</title>
+</head>
+<body>
+<script>
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let V = parseInt(prompt("Nhập số trong mảng :"));
+
+    let index = arr.indexOf(V);
+    if (index !== -1) {
+        arr[index] = 0;
+        for (let i = index; i < arr.length - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        arr[arr.length - 1] = 0;
+       document.write("Đã xóa " + V + " ra khỏi mảng" + "<br>");
+    } else {
+        document.write(V + " không có trong mảng " + "<br>");
+    }
+
+    document.write(arr);
+</script>
+</body>
+</html>

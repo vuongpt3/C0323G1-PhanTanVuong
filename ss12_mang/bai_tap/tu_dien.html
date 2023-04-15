@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <title>Tra từ Anh - Việt</title>
-    <meta charset="UTF-8";
+    <title>Tra cứu từ Anh - Việt</title>
+    <meta charset="UTF-8">
 </head>
 <body>
-<h1>Tra từ Anh - Việt</h1>
+<h1>Tra cứu từ Anh - Việt</h1>
 <form>
-    <label for="tuDien">Nhập từ cần tìm kiếm:</label>
-    <input type="text" id="tuDien" placeholder="Nhập từ muốn kiểm tra">
-    <button type="button" onclick="kiemTra()">Tra cứu</button>
-</form><br>
-<div id="result"></div>
+    <label>Nhập từ cần tra:</label>
+    <input type="text" id="dich" placeholder="Nhập từ tiếng anh để tìm kiếm">
+    <button type="button" onclick="timKiem()">Tìm kiếm</button>
+</form>
+<p id="result"></p>
 
 <script>
-   function kiemTra(){
-       let tiengAnh = ["apple", "book", "cat", "dog", "elephant"];
-       let tiengViet = ["táo", "sách", "mèo", "chó", "voi"];
-       let timTu = document.getElementById("tuDien").toString();
-       let kiemTu = tiengAnh.indexOf(timTu);
+    let tiengAnh = ["apple", "banana", "cat", "dog", "elephant"];
+    let tiengViet = ["quả táo", "quả chuối", "con mèo", "con chó", "con voi"];
 
-       let dich = tiengViet[kiemTu];
-       if (kiemTu !== -1) {
-           result +=("Từ" + timTu + " là " + kiemTu );
-       } else {
-           result += ("Không tìm thấy từ "+ dich);
-       }
-       document.getElementById("result").innerHTML = result;
-   }
+    function timKiem() {
+        let chuyenDoi = document.getElementById("dich").value.toLowerCase();
+        let index = tiengAnh.indexOf(chuyenDoi);
+        if (index > -1) {
+            document.getElementById("result").innerHTML = "<b>" + chuyenDoi + "</b> có nghĩa là <b>" + tiengViet[index] + "</b>";
+        } else {
+            document.getElementById("result").innerHTML = "Không tìm thấy từ <b>" + chuyenDoi + "</b>";
+        }
+    }
 </script>
 </body>
 </html>
