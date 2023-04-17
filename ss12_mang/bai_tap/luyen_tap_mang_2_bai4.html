@@ -6,10 +6,15 @@
 </head>
 <body>
 <script>
-    let arr = ["Xin chào", "đây là", "test"];
-    let count = 2;
-    let soLuong = arr[count].split(" ").length;
-    document.write("Số từ trong chuỗi " + arr[count] +  " là: " + soLuong);
+    let string = prompt("Nhập chuỗi từ ");
+    let arr = string.split(' ');
+    let count = 0;
+    for (let i in arr) {
+        if (isNaN(arr[i]) === true) {
+            count++;
+        }
+    }
+    document.write("Số từ trong mảng " + arr + " là " + count);
 </script>
 </body>
 </html>

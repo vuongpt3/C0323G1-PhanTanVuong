@@ -6,14 +6,18 @@
 </head>
 <body>
 <script>
-    let arr = [];
-    arr[0] = prompt("Nhập chuỗi thứ nhất:");
-    arr[1] = prompt("Nhập chuỗi thứ hai:");
-
-    if (arr[0] === arr[1]) {
-        document.write("Hai chuỗi giống nhau.");
+    let chuoi1 = prompt("Vui lòng nhập chuỗi thứ nhất");
+    let chuoi2 = prompt("Vui lòng nhập chuỗi thứ hai");
+    let count = 0;
+    for (let i in chuoi1) {
+        if ((chuoi1[i] === chuoi2[i]) && (chuoi1.length === chuoi2.length)) {
+            count++;
+        }
+    }
+    if (count === chuoi1.length) {
+        document.write("Hai chuỗi giống nhau");
     } else {
-        document.write("Hai chuỗi không giống nhau.");
+        document.write("Hai chuỗi không giống nhau");
     }
 </script>
 </body>
