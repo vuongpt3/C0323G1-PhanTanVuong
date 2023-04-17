@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Khai báo một mảng kí tự và kích thước</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    arr = ['3', 'q','i', 'k', '8', 'h', 'a', '9', '5', 'h', 'l', '3', '2', 'g', 'q', 'i', 'r'];
+    let count = 0;
+    for (let i = 0 ; i < arr.length; i++){
+        if (!isNaN(arr[i])){
+            count++
+        }
+    }
+    document.write("Số lượng kí tự số là " + count);
+</script>
+</body>
+</html>
