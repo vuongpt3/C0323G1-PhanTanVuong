@@ -7,7 +7,10 @@
 <body>
 <script>
     let arr = [10, 4, 7, 2, 8, 3, 1, 5, 9, 6];
-    arr.sort((a, b) => b - a);
+    // arr.sort((a, b) => b - a);
+    arr.sort(function (a,b){
+        return a-b;
+    });
     document.write("Mảng sau khi sắp xếp : " + arr);
 </script>
 </body>

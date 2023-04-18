@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra có phải số nguyên tố không</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<script>
+  //   let number = +prompt("Nhập vào số ngẫu nhiên");
+  //   isPrime(number);
+  //   let count = 0;
+  //   function isPrime(number){
+  //       if( number < 2){
+  //           for(let i = 2 ; i < number ; i++) {
+  //               if (number % i === 0) {
+  //                   return number === false;
+  //               } else {
+  //                   return true;
+  //               }
+  //           }
+  //       }
+  //   }
+  let num = 2;
+  let count = 0;
+  let number = prompt("Nhập 1 kí tự ngẫu nhiên để in ra số nguyên tố nhỏ hơn 10000");
+  function isPrime(number) {
+      for (let i = 2; i < number; i++) {
+          if (number % i === 0) {
+              return false;
+          } else {
+              return number !== 1;
+          }
+      }
+  }
+  // for (let i = 0; i < 10000; i++) {
+  //     if (isPrime(num)){
+  //         document.write(num + " là số nguyên tố tại vị trí " + i);
+  //         count++;
+  //     }
+  //     num++;
+  // }
+  while (num < 10000){
+      if (isPrime(num)){
+          document.write(num + " là số nguyên tố nhỏ hơn 10000 " + "<br>");
+          count++
+      }
+      num++;
+  }
+</script>
+</body>
+</html>
