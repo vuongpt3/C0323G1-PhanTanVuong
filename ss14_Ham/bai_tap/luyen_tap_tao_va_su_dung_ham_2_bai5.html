@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nhỏ nhất</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhập số a");
+    let b = +prompt("Nhập số b");
+    let c = +prompt("Nhập số c");
+    timSoNhoNhat(a, b, c);
+    function timSoNhoNhat(a, b, c){
+        return Math.min(a,b,c);
+    }
+    document.write("Số nhỏ nhất là " + timSoNhoNhat(a,b,c));
+</script>
+</body>
+</html>

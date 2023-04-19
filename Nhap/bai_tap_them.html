@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+   let number = parseInt(+prompt("Nhập độ dài của mảng"));
+   let arr = [];
+   for (let i = 0; i < number; i++) {
+      let num = (parseInt(+prompt("Nhập phần tử mảng tại vị trí" + i)));
+      arr.push(num);
+   }
+   document.write("Mảng vừa được thêm là " + arr);
+   let flag =true;
+   for (let i = 0; i < number; i++) {
+       if (arr[i] % i === 0){
+           flag = false;
+           break;
+       }
+   }
+   if (flag){
+       document.write(" Yes");
+   }else {
+       document.write(" No");
+   }
+</script>
+</body>
+</html>

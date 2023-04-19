@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi chổ 2 kí tự nhập vào</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhập số a");
+    let b = +prompt("Nhập số b");
+    doiCho(a, b);
+    function doiCho(a, b) {
+        [a, b] = [b, a];
+        return [a, b];
+    }
+    document.write("Kí tự sau khi đổi chổ: " + doiCho(a,b));
+
+</script>
+</body>
+</html>

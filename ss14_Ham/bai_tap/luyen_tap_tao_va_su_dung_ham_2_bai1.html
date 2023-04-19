@@ -5,14 +5,17 @@
     <title>Tính bình phương nhập vào</title>
 </head>
 <body>
-Bình phương của số <input type="text" id="input" placeholder="Nhập số muốn tính bình phương" oninput="kiemTra()"> là <span id="ketQua">
+Bình phương của số <input type="text" id="input" placeholder="Nhập số muốn tính bình phương" oninput="kiemTra()"/> là <span id="ketQua">
 </span>
 <script>
     function kiemTra(){
         let input = document.getElementById("input").value;
-        let ketQua = input * input;
-        document.getElementById("ketQua").innerHTML = ketQua;
+        document.getElementById("ketQua").innerHTML = binhPhuong(input)
     }
+    function binhPhuong(outPut) {
+        return outPut * outPut;
+    }
+    alert(binhPhuong(outPut));
 </script>
 </body>
 </html>

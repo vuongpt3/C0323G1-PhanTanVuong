@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra có phải kí tự số không</title>
+</head>
+<body>
+<script>
+    let number = +prompt("Nhập chuỗi kí tự để kiểm tra");
+    kiemTra(number);
+    function kiemTra(number){
+        if (!isNaN(parseFloat(number))){
+            alert(number + " là kí tự số");
+        }else {
+            alert(number + " không phải chuỗi kí tự số")
+        }
+    }
+</script>
+</body>
+</html>

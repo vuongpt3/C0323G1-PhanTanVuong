@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số trả về true hoặc false</title>
+</head>
+<body>
+<script>
+    let number = +prompt("Nhập số để kiểm tra");
+    function kiemTra(number){
+        if (!isNaN(parseInt(number)) && number > 0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+</script>
+</body>
+</html>

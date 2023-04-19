@@ -6,15 +6,17 @@
 </head>
 <body>
 <script>
+    let num1 = parseInt(+prompt("Nhập tham số thứ hai"));
+    let num2 = parseInt(+prompt("Nhập tham số thứ hai"));
+    soSanh(num1, num2);
     function soSanh(num1, num2) {
+        let sum = num1 + num2;
         if (num1 > num2) {
             alert("Giá trị của tham số thứ nhất lớn hơn tham số thứ hai.");
-        } else {
-            return num1 + num2;
+        } else if (num1 <= num2) {
+            return alert("Tổng hai tham số là : " + sum);
         }
     }
-    let tong2So = soSanh(6,9);
-    alert(tong2So);
 </script>
 </body>
 </html>

@@ -6,13 +6,16 @@
 </head>
 <h2>Công thứ chi vi hình tròn C = d x 3.14</h2>
 <body>
-Nhập đường kính <input type="text" id="input" oninput="kiemTra()"> x 3,14 = <span id="result"></span> là chu vi hình tròn
+Nhập đường kính <input type="text" id="input" oninput="chuVi()"> x 3,14 = <span id="result"></span>  là chu vi hình tròn
 <script>
-    function kiemTra(){
+    function chuVi(){
         let input = document.getElementById("input").value;
-        let result = input * 3.14;
-        document.getElementById("result").innerHTML = result;
+        document.getElementById("result").innerHTML = congThuc(input);
     }
+    function congThuc(outPut){
+        return outPut * 3.14;
+    }
+    alert(congThuc(outPut));
 </script>
 </body>
 </html>

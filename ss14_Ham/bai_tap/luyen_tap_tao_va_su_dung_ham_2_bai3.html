@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giai thừa</title>
+</head>
+<body>
+<script>
+  let num= prompt("Nhập số để tính giai thừa");
+  giaiThua(num);
+  function giaiThua(num) {
+    if (num === 0) {
+      return 1;
+    } else {
+      return num * giaiThua(num - 1);
+    }
+  }
+  document.write("Kết quả giai thừa là " + giaiThua(num));
+</script>
+</body>
+</html>
