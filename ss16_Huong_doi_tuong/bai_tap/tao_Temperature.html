@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let Temperature = function (nhietDo) {
+        this.nhietDo = nhietDo
+        this.chuyenCSangDoF = function (){
+            return "Nhiệt độ từ C sang F là " + ((nhietDo * 1.8 ) +32);
+        }
+        this.chuyenCQuaK = function (){
+            return "Chuyển độ C qua độ Kevin là " + (nhietDo + 273.15);
+        }
+    }
+    let oke = new Temperature(15);
+    alert(oke.chuyenCSangDoF());
+    alert(oke.chuyenCQuaK());
+</script>
+</body>
+</html>

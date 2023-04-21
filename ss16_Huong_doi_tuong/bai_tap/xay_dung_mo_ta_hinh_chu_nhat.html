@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCavas" height="300px" width="500px"></canvas>
+<script>
+    let Rectangle = function (chieuDai, chieuRong) {
+        this.chieuDai = chieuDai
+        this.chieuRong = chieuRong
+        this.dienTich = function () {
+            return "Diện tích là " + chieuDai * chieuRong;
+        };
+        this.chuVi = function () {
+            return "Chu vi là " + (chieuRong + chieuDai) * 2;
+        }
+    }
+    let orichi = new Rectangle(140, 100);
+    console.log(orichi.dienTich());
+    console.log(orichi.chuVi());
+
+    let c = document.getElementById("myCavas");
+    let ctx = c.getContext("2d");
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(0, 0, 140, 100);
+</script>
+</body>
+</html>
