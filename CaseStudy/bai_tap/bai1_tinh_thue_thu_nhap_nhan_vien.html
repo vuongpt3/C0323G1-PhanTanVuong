@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính thuế thu nhập của nhân viên</title>
+</head>
+<body>
+<script>
+    let thuNhap = parseFloat(+prompt("Nhập số tiền thu nhập hàng tháng của bạn"));
+    let tienThue;
+    if (thuNhap == " " || isNaN(thuNhap)){
+        alert("Lỗi dữ liệu");
+    }if (thuNhap >= 15000000){
+        tienThue = thuNhap * 0.2;
+    }else if (7000000 < thuNhap < 15000000){
+        tienThue = thuNhap * 0.1;
+    }else {
+        tienThue = thuNhap * 0.05;
+    }
+    document.write("Số tiền thuế bạn phải nộp là " + tienThue);
+</script>
+</body>
+</html>
