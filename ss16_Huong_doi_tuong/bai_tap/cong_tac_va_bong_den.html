@@ -13,9 +13,10 @@
 
         }
         turnOff(){
+            this.status = false;
         }
         turnOn(){
-
+            this.status = true;
         }
 
     }
@@ -40,7 +41,9 @@
             this.lamp.status = true;
         }
     }
-
+    let lamp1 = new ElectricLamp(false);
+    let button = new switchButton(false);
+    alert(lamp1.status);
 </script>
 </body>
 </html>
