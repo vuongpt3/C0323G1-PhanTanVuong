@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [7,2,5,3,5,3];
+    let b = [7,2,4,6,5,3,5,3];
+    let array = [];
+    function missValue(a,b){
+        for (let i = 0; i < b.length; i++) {
+            if (!a.has(b[i])){
+                a.add(b[i]);
+                array.push(b[i])
+            }
+        }
+        return array;
+    }
+    console.log(missValue(a,b));
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function missingValue(A, B) {
+const setA = new Set(A); // Tạo set lưu trữ các phần tử xuất hiện trong mảng A
+
+const result = []; // Mảng kết quả
+
+for (let i = 0; i < B.length; i++) {
+const num = B[i];
+if (!setA.has(num)) { // Nếu phần tử chưa có trong set A
+setA.add(num); // Thêm vào set A
+result.push(num); // Thêm vào mảng kết quả
+}
+}
+
+return result;
+}
+
+// Sử dụng hàm missingValue với mảng ví dụ đã cho
+const A = [7, 2, 5, 3, 5, 3];
+const B = [7, 2, 5, 4, 6, 3, 5, 3];
+console.log(missingValue(A, B)); // Kết quả: [4, 6]

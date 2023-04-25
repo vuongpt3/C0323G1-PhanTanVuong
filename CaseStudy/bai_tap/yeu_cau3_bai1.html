@@ -6,20 +6,18 @@
 </head>
 <body>
 <script>
-  function prefixSums(a) {
-    let b = [];
+    let a = [1,2,3];
     let sum = 0;
-    for (let i = 0; i < a.length; i++) {
-      sum += a[i];
-      b.push(sum);
-    }
-    return b;
+  function prefixSums(a) {
+      let b = [];
+      for (let i = 0; i < a.length; i++) {
+          sum += a[i];
+          b.push(sum)
+      }
+      return b;
   }
-
-  // Sử dụng hàm prefixSums để tính toán mảng prefix sums của mảng a
-  let a = [1, 2, 3];
-  let b = prefixSums(a);
-  console.log(b); // Kết
+let b = prefixSums(a);
+  console.log(b);
 </script>
 </body>
 </html>
