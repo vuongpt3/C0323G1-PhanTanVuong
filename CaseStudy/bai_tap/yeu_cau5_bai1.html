@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let m = parseInt(prompt("Nhập độ dài mảng của m"));
+    let n = parseInt(prompt("Nhập độ dài mảng n trong mảng m"))
+    let arr = new Array(m);
+    let sum = 0;
+    for (let i = 0; i < m; i++) {
+        arr[i] = new Array(n);
+        for (let j = 0; j < n; j++) {
+            arr[i][j] = parseInt(prompt('Nhập phần tử vị trí hàng ' + '[' + i + ']' + ' cột ' + '[' + j + ']'));
+            if (arr[i][j] % 2 === 0) {
+                sum += arr[i][j];
+            }
+        }
+    }
+    document.write("Tổng phần từ chẳn trong ma trận là " + sum);
+</script>
+</body>
+</html>

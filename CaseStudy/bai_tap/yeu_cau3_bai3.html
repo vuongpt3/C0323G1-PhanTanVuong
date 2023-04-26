@@ -6,29 +6,22 @@
 </head>
 <body>
 <script>
-    let numerators = [5, 2, 5];
-    let denominators = [6, 3, 4];
-
-    function maxFraction(numerators, denominators) {
-        let maxIndex = 0;
-        let maxValue = numerators[0] / denominators[0];
-
-        for (let i = 1; i < numerators.length; i++) {
-            let giaTri = numerators[i] / denominators[i];
-            if (giaTri > maxValue) {
-                maxValue = giaTri;
+    let array1 = [5, 2, 5];
+    let array2 = [6, 3, 4];
+    let maxIndex = 0;
+    let maxValue = array1[0] / array2[0];
+    function fraction(array1,array2){
+        for (let i = 0; i < array1.length; i++) {
+            if (array1[i] / array2[i] > maxValue) {
+                maxValue = array1[i] / array2[i];
                 maxIndex = i;
             }
         }
-
         return maxIndex;
     }
+    let result = fraction(array1,array2);
+    console.log(result);
 
-    console.log(maxFraction(numerators, denominators));
 </script>
 </body>
 </html>
-
-
-
-

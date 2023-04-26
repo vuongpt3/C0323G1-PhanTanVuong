@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm số lượng ký tự chung giống nhau</title>
+</head>
+<body>
+<script>
+    let s1 = ["a","a","b","c","c"];
+    let s2 = ["a","d","c","a","a"];
+    let str1 = s1.toString(" ");
+    let str2 = s2.join(" ");
+    let arr = [];
+    for (let i = 0; i < str1.length;i++) {
+        if (str2.includes(str1[i])) {
+            arr.push(str1[i]);
+        }
+    }
+    alert("Hai xâu s1 và s2 có " + arr.length + " ký tự chung là " + arr);
+</script>
+</body>
+</html>

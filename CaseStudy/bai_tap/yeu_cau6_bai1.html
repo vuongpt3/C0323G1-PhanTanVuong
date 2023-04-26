@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng hệ thống quản lí học viên CodeGym</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    class Student {
+        constructor(id, name, grade, email, birthday) {
+            this.id = id;
+            this.name = name;
+            this.grade = grade;
+            this.email = email;
+            this.birthday = birthday;
+        }
+
+        setID(id) {
+            this.id = id;
+        }
+
+        getID() {
+            return this.id;
+        }
+
+        setName(name) {
+            this.id = name;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setGrade(grade) {
+            this.id = grade;
+        }
+
+        getGrade() {
+            return this.grade;
+        }
+
+        setEmail(email) {
+            this.id = email;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        setBirthday(birthday) {
+            this.id = birthday;
+        }
+
+        getBirthday() {
+            return this.birthday;
+        }
+    }
+
+    let listStudent = [];
+    let inforStudent1 = new Student["HV-0001", "Nguyễn Văn A", "C1022G1", "nguyenvana@gmail.com", "02/02/2004"];
+    let inforStudent2 = new Student["HV-0002", "Nguyễn Văn B", "C1522G1", "nguyenvanb@gmail.com", "03/03/2004"];
+    let inforStudent3 = new Student["HV-0003", "Nguyễn Thị C ", "C2022G1", "nguyenthic@gmail.com", "04/04/2004"];
+    let inforStudent4 = new Student["HV-0004", "Nguyễn Anh D", "C2522G1", "nguyenanhd@gmail.com", "05/05/2004"];
+    let inforStudent5 = new Student["HV-0005", "Nguyễn Đình F", "C3022G1", "nguyendình@gmail.com", "06/06/2004"];
+    let inforStudent6 = new Student["HV-0006", "Nguyễn Phan Anh G", "C3522G1", "nguyenphananhg@gmail.com", "07/07/2004"];
+    let inforStudent7 = new Student["HV-0007", "Phan Tấn A", "C4022G1", "phantana@gmail.com", "08/08/2004"];
+    let inforStudent8 = new Student["HV-0008", "Lê Phú C", "C4522G1", "lephuc@gmail.com", "09/09/2004"];
+    let inforStudent9 = new Student["HV-0009", "Đoàn Phú D", "C5022G1", "doanphud@gmail.com", "10/10/2004"];
+    let inforStudent10 = new Student["HV-0010", "Lê Phú Quý", "C5522G1", "lephuquy@gmail.com", "11/11/2004"];
+    let inforStudent11 = new Student["HV-0011", "Phú Lê", "C6022G1", "phule@gmail.com", "12/12/2004"];
+    listStudent.push(inforStudent1, inforStudent2,
+        inforStudent3, inforStudent4, inforStudent5,
+        inforStudent6, inforStudent7, inforStudent8,
+        inforStudent9, inforStudent10, inforStudent11,);
+    display(listStudent);
+
+
+    function display(list) {
+        let tableString = '<table border="1" style="border-collapse: collapse">\n' +
+            '   <tr>\n' +
+            '       <th>ID</th>\n' +
+            '       <th>Name</th>\n' +
+            '       <th>Grade</th>\n' +
+            '       <th>Email</th>\n' +
+            '       <th>Ngày sinh</th>\n' +
+            '   </tr>';
+        for (let i = 0; i < list.length; i++) {
+            tableString += '<tr>\n' +
+                '        <td>' + list[i].getID() + '</td>\n' +
+                '        <td>' + list[i].getName() + '</td>\n' +
+                '        <td>' + list[i].getGrade() + '</td>\n' +
+                '        <td>' + list[i].getEmail() + '</td>\n' +
+                '        <td>' + list[i].getBirthday() + '</td>\n' +
+                '    </tr>'
+        }
+        tableString += '</table>';
+        document.getElementById("result").innerHTML = tableString;
+    }
+</script>
+</body>
+</html>
