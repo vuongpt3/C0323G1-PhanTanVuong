@@ -7,9 +7,9 @@
 <body>
 <script>
     let h = prompt("Nhập chiều cao tam giác");
-    for (let i = 0; i <= h; i++) {
-        for (let j = 1; j <= 9; j++) {
-            if (j <= 4 - i && j >= 4 + i){
+    for (let i = 0; i < h; i++) {
+        for (let j = 0; j <= 9; j++) {
+            if (j >= 4 - i && j <= 4 + i){
                 document.write("*");
             }else {
                 document.write("&nbsp&nbsp");
