@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo tam giác cân đặc</title>
+</head>
+<body>
+<script>
+    let h = prompt("Nhập chiều cao tam giác");
+    for (let i = 0; i <= h; i++) {
+        for (let j = 1; j <= 9; j++) {
+            if (j <= 4 - i && j >= 4 + i){
+                document.write("*");
+            }else {
+                document.write("&nbsp&nbsp");
+            }
+        }
+        document.write("<br/>");
+    }
+</script>
+</body>
+</html>

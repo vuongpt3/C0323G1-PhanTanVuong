@@ -3,17 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Xây dựng hệ thống quản lí học viên CodeGym</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .information {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .information input {
+            margin-left: 10px;
+            height: 30px;
+            width: 350px;
+            margin-top: 10px;
+            font-size: 15px;
+            border-radius: 10px;
+            border: 1px solid deeppink;
+        }
+
+        .information button {
+            margin-left: 2px;
+            height: 30px;
+            width: 150px;
+            border-radius: 10px;
+            border: 1px solid red;
+        }
+    </style>
 </head>
 <body>
+<div class="information">
+    <input type="text" id="id" placeholder="Nhập thông tin mã học viên" maxlength="10">
+    <input type="text" id="name" placeholder="Nhập thông tin name" maxlength="50">
+    <input type="text" id="grade" placeholder="Nhập thông tin lớp" maxlength="10">
+    <input type="text" id="email" placeholder="Nhập thông tin Email" maxlength="50">
+    <input type="date" id="birthday" placeholder="Nhập thông tin ngày sinh">
+    <input type="number" id="module" placeholder="Nhập module" max="6" min="1">
+    <button id="btnAdd" onclick="addNew()">Thêm mới học viên</button>
+    <button id="btnUpdate" style="display: none" onclick="updateStudent()">Update</button>
+</div>
+
 <p id="result"></p>
 <script>
     class Student {
-        constructor(id, name, grade, email, birthday) {
+        constructor(id, name, grade, email, birthday, module) {
             this.id = id;
             this.name = name;
             this.grade = grade;
             this.email = email;
             this.birthday = birthday;
+            this.module = module
         }
 
         setID(id) {
@@ -55,35 +97,110 @@
         getBirthday() {
             return this.birthday;
         }
+
+        setModule(module) {
+            this.module = module;
+        }
+
+        getModule() {
+            return this.module;
+        }
     }
 
     let listStudent = [];
-    let inforStudent1 = new Student["HV-0001", "Nguyễn Văn A", "C1022G1", "nguyenvana@gmail.com", "02/02/2004"];
-    let inforStudent2 = new Student["HV-0002", "Nguyễn Văn B", "C1522G1", "nguyenvanb@gmail.com", "03/03/2004"];
-    let inforStudent3 = new Student["HV-0003", "Nguyễn Thị C ", "C2022G1", "nguyenthic@gmail.com", "04/04/2004"];
-    let inforStudent4 = new Student["HV-0004", "Nguyễn Anh D", "C2522G1", "nguyenanhd@gmail.com", "05/05/2004"];
-    let inforStudent5 = new Student["HV-0005", "Nguyễn Đình F", "C3022G1", "nguyendình@gmail.com", "06/06/2004"];
-    let inforStudent6 = new Student["HV-0006", "Nguyễn Phan Anh G", "C3522G1", "nguyenphananhg@gmail.com", "07/07/2004"];
-    let inforStudent7 = new Student["HV-0007", "Phan Tấn A", "C4022G1", "phantana@gmail.com", "08/08/2004"];
-    let inforStudent8 = new Student["HV-0008", "Lê Phú C", "C4522G1", "lephuc@gmail.com", "09/09/2004"];
-    let inforStudent9 = new Student["HV-0009", "Đoàn Phú D", "C5022G1", "doanphud@gmail.com", "10/10/2004"];
-    let inforStudent10 = new Student["HV-0010", "Lê Phú Quý", "C5522G1", "lephuquy@gmail.com", "11/11/2004"];
-    let inforStudent11 = new Student["HV-0011", "Phú Lê", "C6022G1", "phule@gmail.com", "12/12/2004"];
+    let inforStudent1 = new Student("HV-0001", "Nguyễn Văn A", "C1022G1", "nguyenvana@gmail.com", "2004-02-02", 3);
+    let inforStudent2 = new Student("HV-0002", "Nguyễn Văn B", "C1522G1", "nguyenvanb@gmail.com", "2004-03-03", 2);
+    let inforStudent3 = new Student("HV-0003", "Nguyễn Thị C ", "C2022G1", "nguyenthic@gmail.com", "2004-04-04", 1);
+    let inforStudent4 = new Student("HV-0004", "Nguyễn Anh D", "C2522G1", "nguyenanhd@gmail.com", "2004-05-05", 4);
+    let inforStudent5 = new Student("HV-0005", "Nguyễn Đình F", "C3022G1", "nguyendình@gmail.com", "2004-06-06", 2);
+    let inforStudent6 = new Student("HV-0006", "Nguyễn Phan Anh G", "C3522G1", "nguyenphananhg@gmail.com", "2004-07-07", 6);
+    let inforStudent7 = new Student("HV-0007", "Phan Tấn A", "C4022G1", "phantana@gmail.com", "2004-08-08", 5);
+    let inforStudent8 = new Student("HV-0008", "Lê Phú C", "C4522G1", "lephuc@gmail.com", "2004-09-09", 1);
+    let inforStudent9 = new Student("HV-0009", "Đoàn Phú D", "C5022G1", "doanphud@gmail.com", "2004-10-10", 2);
+    let inforStudent10 = new Student("HV-0010", "Lê Phú Quý", "C5522G1", "lephuquy@gmail.com", "2004-11-11", 6);
+    let inforStudent11 = new Student("HV-0011", "Phú Lê", "C6022G1", "phule@gmail.com", "2004-12-12", 3);
     listStudent.push(inforStudent1, inforStudent2,
         inforStudent3, inforStudent4, inforStudent5,
         inforStudent6, inforStudent7, inforStudent8,
         inforStudent9, inforStudent10, inforStudent11,);
     display(listStudent);
+    let updateIndex = -1;
 
+    function addNew() {
+        let id = document.getElementById("id").value;
+        let name = document.getElementById("name").value;
+        let grade = document.getElementById("grade").value;
+        let email = document.getElementById("email").value;
+        let birthday = document.getElementById("birthday").value;
+        let module = document.getElementById("module").value;
+        let newStudent = new Student(id, name, grade, email, birthday, module);
+        listStudent.push(newStudent);
+        document.getElementById("id").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("grade").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("birthday").value = "";
+        document.getElementById("module").value = "";
+        if (id === "" || id === listStudent[0][0]) {
+            alert("Lỗi");
+        } else if (name === "") {
+            alert("Vui lòng nhập tên của học viên");
+        } else if (grade === "") {
+            alert("Vui lòng nhập lớp");
+        } else if (email === "") {
+            alert("Vui lòng nhập Email");
+        } else if (birthday === "") {
+            alert("Nhập ngày sinh của học viên vào");
+        } else if (module === "") {
+            alert("Nhập Module vào");
+        }
+        display(listStudent);
+    }
+
+    function updateStudent() {
+        let editID = document.getElementById("id").value;
+        let editName = document.getElementById("name").value;
+        let editGrade = document.getElementById("grade").value;
+        let editEmail = document.getElementById("email").value;
+        let editBirthday = document.getElementById("birthday").value;
+        let editModule = document.getElementById("module").value;
+        listStudent[updateIndex].setID(editID);
+        listStudent[updateIndex].setName(editName);
+        listStudent[updateIndex].setGrade(editGrade);
+        listStudent[updateIndex].setEmail(editEmail);
+        listStudent[updateIndex].setBirthday(editBirthday);
+        listStudent[updateIndex].setModule(editModule);
+        document.getElementById("btnAdd").style.display = "inline";
+        document.getElementById("btnUpdate").style.display = "none";
+        document.getElementById("id").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("grade").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("birthday").value = "";
+        document.getElementById("module").value = "";
+        display(listStudent);
+    }
+
+    function deleteStudent(index) {
+        let conf = confirm("Bạn có muốn xóa " + listStudent[index].getName() + " không?");
+        if (conf) {
+            listStudent.splice(index, 1);
+        }
+        display(listStudent);
+    }
 
     function display(list) {
-        let tableString = '<table border="1" style="border-collapse: collapse">\n' +
+        let tableString = '<table border="1"' +
+            ' style="border-collapse: collapse; text-align: center;margin-left: 15%;width: 70%;height: 450px;border: 2px solid green">\n' +
             '   <tr>\n' +
             '       <th>ID</th>\n' +
             '       <th>Name</th>\n' +
             '       <th>Grade</th>\n' +
             '       <th>Email</th>\n' +
             '       <th>Ngày sinh</th>\n' +
+            '       <th>Module</th>\n' +
+            '       <th>Chỉnh sửa</th>\n' +
+            '       <th>Xóa học viên</th>\n' +
             '   </tr>';
         for (let i = 0; i < list.length; i++) {
             tableString += '<tr>\n' +
@@ -92,10 +209,25 @@
                 '        <td>' + list[i].getGrade() + '</td>\n' +
                 '        <td>' + list[i].getEmail() + '</td>\n' +
                 '        <td>' + list[i].getBirthday() + '</td>\n' +
+                '        <td>' + list[i].getModule() + '</td>\n' +
+                '        <td><button style="height: 30px;width: 100px;border-radius: 10px;border: 1px solid blue" onclick="showInforEdit(' + i + ')">Chỉnh sửa</button></td>\n' +
+                '        <td><button style="height: 30px;width: 100px;border-radius: 10px;border: 1px solid blue" onclick="deleteStudent(' + i + ')">Xóa học viên</button></td>\n' +
                 '    </tr>'
         }
         tableString += '</table>';
         document.getElementById("result").innerHTML = tableString;
+    }
+
+    function showInforEdit(index) {
+        updateIndex = index;
+        document.getElementById("id").value = listStudent[index].getID();
+        document.getElementById("name").value = listStudent[index].getName();
+        document.getElementById("grade").value = listStudent[index].getGrade();
+        document.getElementById("email").value = listStudent[index].getEmail();
+        document.getElementById("birthday").value = listStudent[index].getBirthday();
+        document.getElementById("module").value = listStudent[index].getModule();
+        document.getElementById("btnAdd").style.display = "none";
+        document.getElementById("btnUpdate").style.display = "inline";
     }
 </script>
 </body>
